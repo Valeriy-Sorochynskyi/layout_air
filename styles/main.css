@@ -5,7 +5,7 @@
           box-sizing: border-box; }
 
 .header {
-  height: 800px;
+  height: 100vh;
   position: relative;
   background-color: #008aff;
   border-radius: 0 0 0 300px;
@@ -19,22 +19,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    height: 120px; }
-  .header__link {
-    -webkit-transition: color 0.3s;
-    transition: color 0.3s; }
-    .header__link:hover {
-      color: #ff9c8e; }
-  .header__link--active {
-    position: relative; }
-    .header__link--active::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 2px;
-      background-color: #ff9c8e;
-      position: absolute;
-      bottom: -8px; }
+    height: 15%; }
   .header__logo {
     width: 60px;
     height: 28px;
@@ -60,7 +45,6 @@
     line-height: 68px;
     letter-spacing: -2px; }
   .header__text {
-    font-family: "Open Sans", sans-serif;
     font-size: 18px;
     line-height: 150%;
     margin: 32px 0 83px; }
@@ -69,7 +53,7 @@
     left: 57%;
     right: 0;
     bottom: 0;
-    height: 680px;
+    height: 85%;
     background: center url(../images/slider/stairs.png) no-repeat;
     background-size: cover;
     border-radius: 200px 0 0; }
@@ -124,6 +108,21 @@
         -ms-flex-align: center;
             align-items: center;
     margin-right: 318px; }
+  .nav__link {
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s; }
+    .nav__link:hover {
+      color: #ff9c8e; }
+  .nav__link--active {
+    position: relative; }
+    .nav__link--active::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #ff9c8e;
+      position: absolute;
+      bottom: -8px; }
 
 @media screen and (max-width: 1300px) {
   .nav__list {
@@ -150,8 +149,12 @@
   font-weight: 600;
   font-size: 15px;
   line-height: 22px;
-  cursor: pointer; }
-  .button:focus {
+  cursor: pointer;
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease; }
+  .button:focus, .button:hover {
     -webkit-box-shadow: 0 0 10px #ff9c8e;
             box-shadow: 0 0 10px #ff9c8e;
     outline: none; }
@@ -190,13 +193,17 @@
   background-color: #fff;
   border-radius: 50%;
   border: none;
-  cursor: pointer; }
-  .slider__arrow:focus {
+  cursor: pointer;
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease; }
+  .slider__arrow:focus, .slider__arrow:hover {
     -webkit-box-shadow: 0 0 10px #008aff;
             box-shadow: 0 0 10px #008aff;
     outline: none; }
 
-.slider__img {
+.slider__arrow-icon {
   width: 6px;
   height: 9px; }
 
@@ -216,9 +223,9 @@
   margin-bottom: 8px; }
 
 .slider__text {
-  font-family: "Open Sans", sans-serif;
   font-size: 14px;
-  line-height: 140%; }
+  line-height: 140%;
+  max-width: 225px; }
 
 @media screen and (max-width: 900px) {
   .slider {
@@ -231,7 +238,6 @@
   right: 0;
   left: 0;
   background-color: #008aff;
-  z-index: 2;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   -webkit-transition: -webkit-transform 0.3s ease;
@@ -282,6 +288,7 @@
     outline: none; }
 
 body {
+  font-family: "Open Sans", sans-serif;
   background: #f2f9ff; }
 
 /*# sourceMappingURL=main.css.map */
