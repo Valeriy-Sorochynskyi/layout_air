@@ -28,7 +28,12 @@ a {
         -ms-flex-align: center;
             align-items: center;
     height: 15%;
-    z-index: 2; }
+    z-index: 2;
+    background-color: #008affe0;
+    -webkit-transition: -webkit-box-shadow 0.3s;
+    transition: -webkit-box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s, -webkit-box-shadow 0.3s; }
   .header__logo {
     width: 60px;
     height: 28px; }
@@ -94,8 +99,7 @@ a {
       left: 0;
       right: 0;
       padding: 0 10%;
-      height: 10%;
-      background-color: #008affe0; } }
+      height: 10%; } }
 
 @media screen and (max-width: 450px) {
   .header {
@@ -126,20 +130,21 @@ a {
     .nav__list-header {
       margin-right: 318px; }
   .nav__link {
+    position: relative;
     -webkit-transition: color 0.3s;
     transition: color 0.3s; }
-    .nav__link:hover {
-      color: #ff9c8e; }
-  .nav__link--active {
-    position: relative; }
-    .nav__link--active::after {
+    .nav__link::after {
       content: "";
       display: block;
-      width: 100%;
+      width: 0%;
       height: 2px;
       background-color: #ff9c8e;
       position: absolute;
-      bottom: -8px; }
+      bottom: -8px;
+      -webkit-transition: width 0.3s;
+      transition: width 0.3s; }
+    .nav__link:hover::after, .nav__link:focus::after, .nav__link:active::after {
+      width: 100%; }
 
 @media screen and (max-width: 1300px) {
   .nav__list {
@@ -310,12 +315,7 @@ a {
   font-size: 13px;
   line-height: 150%;
   letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #fff; }
-  .link:focus {
-    -webkit-box-shadow: 0 0 10px #ff9c8e;
-            box-shadow: 0 0 10px #ff9c8e;
-    outline: none; }
+  text-transform: uppercase; }
 
 .about {
   max-width: 754px;
@@ -991,6 +991,8 @@ a {
 
 .socials-list {
   margin-top: 20px; }
+  .socials-list__item:hover, .socials-list__item:active, .socials-list__item:focus {
+    color: #ff9c8e; }
   .socials-list__item:not(:last-child) {
     margin-right: 45px; }
   .socials-list__icon {
@@ -998,8 +1000,6 @@ a {
     height: 24px;
     -webkit-transition: color 0.3s ease;
     transition: color 0.3s ease; }
-    .socials-list__icon:hover {
-      color: #ff9c8e; }
 
 .contact-list__title {
   margin-bottom: 8px;
@@ -1013,7 +1013,11 @@ a {
   display: inline-block;
   font-weight: 600;
   margin-bottom: 48px;
-  font-size: 24px; }
+  font-size: 24px;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s; }
+  .contact-list__link:hover, .contact-list__link:active, .contact-list__link:focus {
+    color: #ff9c8e; }
 
 @media screen and (max-width: 850px) {
   .footer__container {
@@ -1105,6 +1109,9 @@ a {
     margin-bottom: 30px; }
   .form__button {
     margin: 40px auto 0; } }
+
+html {
+  scroll-behavior: smooth; }
 
 body {
   font-family: "Open Sans", sans-serif;
